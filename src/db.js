@@ -16,20 +16,11 @@ const path = require('path')
      
 
 
-// const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-//   host: process.env.DB_HOST,
-//   dialect: 'mysql',
-//   logging: false
-// })
-
-const sequelize = new Sequelize('u381026178_eCommerceSalud', 'u381026178_admin', 'Qu&df=#;E2', {
-  host: 'sql811.main-hosting.eu',
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
   dialect: 'mysql',
-  logging: false,
-  native: false,
+  logging: false
 })
-
-
 
 sequelize.authenticate().then(() => {
   console.log('Nos conectamos a la base de hostinger!!!')
