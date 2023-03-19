@@ -15,6 +15,15 @@ const path = require('path')
 
      
 
+Tech Stack: React,
+
+20+ years of IT
+
+                          involvement
+
+Conversational (fairly
+
+                          neutral
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
   host: process.env.DB_HOST,
