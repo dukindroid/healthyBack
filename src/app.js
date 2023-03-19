@@ -10,14 +10,6 @@ require("./db.js");
 
 const server = express();
 server.name = "API";
-server.options('*', cors())
-server.use(cors({origin: '*'}));
-server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
-server.use(bodyParser.json({ limit: "50mb" }));
-server.use(cookieParser());
-server.use(
-  morgan(":method :url :status :res[content-length] - :response-time ms")
-);
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Credentials', 'true')
@@ -26,6 +18,15 @@ server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
   next()
 })
+server.options('*', cors())
+server.use(cors({origin: true}));
+server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
+server.use(bodyParser.json({ limit: "50mb" }));
+server.use(cookieParser());
+server.use(
+  morgan(":method :url :status :res[content-length] - :response-time ms")
+);
+
 
 server.use("/", routes);
 
